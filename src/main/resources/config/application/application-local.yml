@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://database-msa-guild-postgre.cdnxkpguqzfr.ap-northeast-2.rds.amazonaws.com:5432/customerDB
+    username: msaguild
+    password: msaguild
+    driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+opentracing:
+  jaeger:
+    http-sender:
+      url: http://jaeger-collector.istio-system:14268/api/traces
+    enable-b3-propagation: true
+logging:
+  level:
+    com.skt.twd: debug

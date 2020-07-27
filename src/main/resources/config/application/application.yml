@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: twd-customer-api
+  profiles:
+    active: local
+logging:
+  config: classpath:config/log/logback-${spring.profiles.active}.xml
